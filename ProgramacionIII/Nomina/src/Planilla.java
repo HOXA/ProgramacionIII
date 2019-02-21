@@ -44,7 +44,20 @@ public class Planilla extends javax.swing.JFrame {
             IGSS=0.00;
         }
         
-        double_sueldoLiquido = int_salarioBase + int_percepciones - IGSS - int_deducciones; //Calcula el sueldo liquido
+         //Calculo del ISR segun el salario base
+            
+         if ((int_salarioBase > 2600)&&(int_salarioBase < 5000)){
+             
+             ISR = int_salarioBase*0.03;
+         } else if ((int_salarioBase >= 5000) &&(int_salarioBase < 10000) ){
+             
+             ISR = int_salarioBase*0.05;
+         }else if (int_salarioBase >= 10000){
+             
+             ISR = int_salarioBase*0.1; 
+         }
+        
+        double_sueldoLiquido = int_salarioBase + int_percepciones - IGSS - ISR - int_deducciones; //Calcula el sueldo liquido
          
         //Condicionales para determinar el nombre del departamento segun el Combo Box
         
@@ -79,18 +92,7 @@ public class Planilla extends javax.swing.JFrame {
              
          }
         
-            //Calculo del ISR segun el salario base
-            
-         if ((int_salarioBase > 2600)&&(int_salarioBase < 5000)){
-             
-             ISR = int_salarioBase*0.03;
-         } else if ((int_salarioBase >= 5000) &&(int_salarioBase < 10000) ){
-             
-             ISR = int_salarioBase*0.05;
-         }else if (int_salarioBase >= 10000){
-             
-             ISR = int_salarioBase*0.1; 
-         }
+           
     }
     
     public void ingresoEmpleado(){ //Ingresa al empleado a la tabla
