@@ -14,6 +14,7 @@ import javax.swing.table.DefaultTableModel;
 
 public class Planilla extends javax.swing.JFrame {
     DecimalFormat format = new DecimalFormat("0.00");
+    //Variables sin notacion
     int int_salarioBase, int_deducciones, int_percepciones,
         int_totalProy, int_totalInfor, int_totalCapDes, int_totalRecSel, int_totalNomina, srandom;
     double ISR, IGSS, double_sueldoLiquido;
@@ -195,7 +196,7 @@ public class Planilla extends javax.swing.JFrame {
 
         combx_Departamento.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-Seleccione-", "Proyectos", "Informatica", "Capacitacion y Desarrollo", "Reclutamiento y Seleccion", "Nominas", " " }));
 
-        jLabel3.setText("IGGS");
+        jLabel3.setText("IGSS");
 
         btgrp_igss.add(RBT_igssSi);
         RBT_igssSi.setText("Sí");

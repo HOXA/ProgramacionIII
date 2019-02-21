@@ -220,7 +220,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel3">
       <Properties>
-        <Property name="text" type="java.lang.String" value="IGGS"/>
+        <Property name="text" type="java.lang.String" value="IGSS"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JRadioButton" name="RBT_igssSi">
