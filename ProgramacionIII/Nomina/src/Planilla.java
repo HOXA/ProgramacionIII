@@ -32,15 +32,13 @@ public class Planilla extends javax.swing.JFrame {
        
         srandom = rand.nextInt(3000); //Genera salario segun random    
         int_salarioBase = 2742+srandom; //Salario base en Guatemala
-        int_deducciones = rand.nextInt(3000);
+        int_deducciones = rand.nextInt(3000); // VAlores aleatorios
         int_percepciones = rand.nextInt(3000);
         
-        if(RBT_igssSi.isSelected()){
+        if(RBT_igssSi.isSelected()){//Calculo del IGSS  segun el radio buton
             
              IGSS =int_salarioBase*0.0483;
-            
-            
-            JOptionPane.showMessageDialog(null, IGSS);
+     
               
         }else if(RBT_igssNo.isSelected()){
             IGSS=0.00;
@@ -117,7 +115,7 @@ public class Planilla extends javax.swing.JFrame {
         
     }
     
-    public void sumaPlanilla(){
+    public void sumaPlanilla(){//Ingreso de Suma del total de salarios de cada departamento
         modeloTotal.setValueAt(Integer.toString(int_totalProy), 0, 0);
         modeloTotal.setValueAt(Integer.toString(int_totalInfor), 0, 1);
         modeloTotal.setValueAt(Integer.toString(int_totalCapDes), 0, 2);
@@ -258,10 +256,11 @@ public class Planilla extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(BT_InsNombre)
-                    .addComponent(TXT_InsNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(TXT_InsNombre, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel1)
+                        .addComponent(BT_InsNombre)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(23, 23, 23)
@@ -293,9 +292,9 @@ public class Planilla extends javax.swing.JFrame {
 
     private void BT_InsNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BT_InsNombreActionPerformed
         //Ingreso de trabajadores a planilla
-        if ("".equals(TXT_InsNombre.getText())){ //Comprobar si el texto está en blanco.
+        if ("".equals(TXT_InsNombre.getText())||combx_Departamento.getSelectedItem()=="-Seleccione-"){ //Comprobar si el texto está en blanco.
            
-           JOptionPane.showMessageDialog(null, "Error, campo vacio");
+           JOptionPane.showMessageDialog(null, "Error, verifique datos del empleado");
                
         }else{
            datosEmpleado();
